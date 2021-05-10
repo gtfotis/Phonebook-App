@@ -14,9 +14,13 @@ while running == True:
     if select_number == 1:
         print("=====================")
         user_name = input("Name? ")
-        print("=====================")
-        print(user_name + "'s phone number is: " + phonebook_database[user_name])
-        print("=====================")
+        if user_name in phonebook_database:
+            print("=====================")
+            print(user_name + "'s phone number is: " + phonebook_database[user_name])
+            print("=====================")
+        else:
+            print("=====================")
+            print(user_name + "'s phone number was not found.")
         user_response = input("Return to main menu? (y/n) ")
         if user_response == "y" or user_response == "yes":
             continue
